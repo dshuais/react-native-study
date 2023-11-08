@@ -59,9 +59,13 @@ function Component(props) {
         </Pressable>
 
         {/* 一个可点击盒子 */}
-        <TouchableOpacity style={styles.button} onPress={e => setCount(count + 1)} activeOpacity={0.3}>
-          <Text>我是按钮</Text>
+        {/* <TouchableHighlight style={styles.touchBox} onPress={handleClick} underlayColor='rgba(255, 0, 0, 0.3)' activeOpacity={1}> */}
+        <TouchableOpacity style={styles.touchBox} onPress={handleClick} activeOpacity={1}>
+          <TouchableOpacity style={styles.button} onPress={e => setCount(count + 1)} activeOpacity={0.3}>
+            <Text>我是按钮</Text>
+          </TouchableOpacity>
         </TouchableOpacity>
+        {/* </TouchableHighlight> */}
       </View>
 
       <View style={styles.box}>
