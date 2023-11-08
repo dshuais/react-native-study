@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2023-11-08 12:31:32
  * @LastEditors: dushuai
- * @LastEditTime: 2023-11-08 18:22:21
+ * @LastEditTime: 2023-11-08 18:41:06
  * @description: App
  */
 import { StatusBar } from 'expo-status-bar';
@@ -19,33 +19,11 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: 'red',
-  },
-  button: {
-    backgroundColor: 'red',
-    width: 200,
-    height: 100,
-    borderRadius: 10,
-    marginTop: 20,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  count: {
-    fontSize: 20,
-    color: '#fff',
-    fontWeight: 'bold',
-  }
-});
-
+/**
+ * 组件
+ * @param {*} props 
+ * @returns 
+ */
 function Component(props) {
 
   const [count, setCount] = useState(0);
@@ -59,13 +37,49 @@ function Component(props) {
       <View>
         <StatusBar backgroundColor="red" />
         <Text style={styles.text}>{props.title}</Text>
-        <Text style={styles.button}>我是p</Text>
-        <Button style={{ ...styles.button }} title='BUTTON' color='red' onPress={handleClick} />
-        <Button style={{ ...styles.button }} title='clear' color='#000' onPress={_ => setCount(0)} />
+        <Text style={styles.box}>我是p</Text>
+        <Button TouchableOpacity="backgroundColor:red;" title='BUTTON' color='red' onPress={handleClick} />
+        <Button title='clear' color='#000' onPress={_ => setCount(0)} />
       </View>
-      <View style={styles.button}>
+      <View style={styles.box}>
         <Text style={styles.count}>{count}</Text>
       </View>
     </>
   )
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    color: 'red',
+  },
+  box: {
+    backgroundColor: 'red',
+    width: 200,
+    height: 100,
+    borderRadius: 10,
+    marginTop: 20,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  count: {
+    fontSize: 20,
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  button: {
+    width: 200,
+    height: 100,
+    borderRadius: 10,
+    marginTop: 20,
+    backgroundColor: 'red',
+    display: 'block',
+  }
+});
