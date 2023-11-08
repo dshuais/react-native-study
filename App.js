@@ -46,7 +46,7 @@ function Component(props) {
         <Button title='clear' color='#000' onPress={_ => setCount(0)} />
 
         <TouchableHighlight style={styles.touchBox} onPress={handleClick}>
-          <TouchableHighlight onPress={handleClick}>
+          <TouchableHighlight style={{ borderRadius: '10px' }} onPress={handleClick} underlayColor='#fff' activeOpacity={0.5}>
             <View style={styles.touchButton}>
               <Text>++</Text>
             </View>
@@ -67,7 +67,7 @@ function Component(props) {
       <View style={styles.box}>
         <Text style={styles.count}>{count}</Text>
       </View>
-      {/* TouchableHighlight设置margin or borderRadius会造成ios点击黑色背景 */}
+
       <TouchableHighlight onPress={handleClick}>
         <View style={styles.touchButton}>
           <Text>++</Text>
@@ -113,12 +113,13 @@ const styles = StyleSheet.create({
   touchButton: {
     width: 200,
     height: 100,
-    backgroundColor: "#DDDDDD",
-    padding: 10
+    backgroundColor: "red",
+    padding: 10,
+    borderRadius: 10,
   },
   touchBox: {
     width: '100%',
-    height: 300,
+    height: 200,
     backgroundColor: 'rgba(255, 0, 0, 0.3)',
     paddingTop: 20,
   }
