@@ -5,15 +5,33 @@
  * @LastEditTime: 2023-11-10 17:38:43
  * @description: Home
  */
-import { View, Text } from 'react-native'
+import { Stack, useRouter } from 'expo-router'
+import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 
 const Home = () => {
 
+  const router = useRouter()
+
+  // console.log('router:>> ', router)
+
   return (
-    <View>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#eee' }}>
+
+      <Stack.Screen options={{
+        headerStyle: { backgroundColor: '#eee' },
+        headerShadowVisible: false
+      }} />
+
       <Text>Home</Text>
-    </View>
+
+    </SafeAreaView>
   )
 }
 
 export default Home
+
+const styles = StyleSheet.create({
+  lightWhite: {
+    backgroundColor: '#fff',
+  }
+})
