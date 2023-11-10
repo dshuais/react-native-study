@@ -48,7 +48,7 @@ function Component(props) {
         <TouchableHighlight style={styles.touchBox} onPress={handleClick}>
           <TouchableHighlight style={{ borderRadius: '10px' }} onPress={handleClick} underlayColor='#fff' activeOpacity={0.5}>
             <View style={styles.touchButton}>
-              <Text>++</Text>
+              <Text>+---</Text>
             </View>
           </TouchableHighlight>
         </TouchableHighlight>
